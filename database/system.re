@@ -1,0 +1,1 @@
+= `|=`|shell_exec\(|shell_exec |exec\(|exec \(|passthru|proc_open|system\(|system \(|rmdir|symlink|touch|unlink|mkdir|file_put_contents|rename|copy\(|copy \(|delete \(|delete\(

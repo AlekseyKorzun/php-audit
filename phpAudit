@@ -1,0 +1,59 @@
+#!/bin/bash
+echo "=========================================================================="
+echo " phpAudit                                         <www.alekseykorzun.com> "
+echo "=========================================================================="
+path=`echo "$1"`
+if [ "$path" == '' ]; then
+        echo "Syntax: ./phpAudit </path/to/directory/>";
+        exit;
+fi
+
+echo ""
+echo "[:)] Scanning '$path'...";
+files=`find $path -name '*.php' -print`;
+if [ "$files" == '' ]; then
+	echo "  [!] No valid PHP files were found, aborting!";
+	exit; 
+fi
+
+echo ""
+echo ""
+echo "[+] Checking for PHP configuration modifications"
+for file in $files
+do
+    result=`cat "$file" | grep -E -i -f database/escalation.re`
+    if [ -n "$result" ]
+    then
+    	echo "  [!] Warning: $file";
+    	echo $result;
+    	echo ""
+    fi
+done
+
+echo ""
+echo ""
+echo "[+] Checking for network operations"
+for file in $files
+do
+    result=`cat "$file" | grep -E -i -f database/network.re`
+    if [ -n "$result" ]
+    then
+    	echo "  [!] Warning: $file";
+    	echo $result;
+    	echo ""
+    fi
+done
+
+echo ""
+echo ""
+echo "[+] Checking for system operations"
+for file in $files
+do
+    result=`cat "$file" | grep -E -i -f database/system.re`
+    if [ -n "$result" ]
+    then
+    	echo "  [!]Warning: $file";
+    	echo $result;
+    	echo ""
+    fi
+done

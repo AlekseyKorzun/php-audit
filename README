@@ -1,0 +1,15 @@
+phpAudit (v1.0)
+==========================
+
+phpAudit is a simple shell script that scans PHP files for possible security risks.
+
+Usage
+-----
+
+Make sure script has execution permissions (chmod a+x phpAudit) and simply run:
+./phpAudit /path/to/directory/with/php/files/) to begin scanning.
+
+Permissions
+-----
+
+Your system must provide you with full access to bash, find, grep and cat utilities.
