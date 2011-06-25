@@ -24,9 +24,9 @@ do
     result=`cat "$file" | grep -E -i -f database/escalation.re`
     if [ -n "$result" ]
     then
-    	echo "  [!] Warning: $file";
-    	echo $result;
-    	echo ""
+        echo "  [!] Warning: $file";
+        echo "     "$result;
+        echo ""
     fi
 done
 
@@ -38,9 +38,9 @@ do
     result=`cat "$file" | grep -E -i -f database/network.re`
     if [ -n "$result" ]
     then
-    	echo "  [!] Warning: $file";
-    	echo $result;
-    	echo ""
+        echo "  [!] Warning: $file";
+        echo "     "$result;
+        echo ""
     fi
 done
 
@@ -52,8 +52,8 @@ do
     result=`cat "$file" | grep -E -i -f database/system.re`
     if [ -n "$result" ]
     then
-    	echo "  [!]Warning: $file";
-    	echo $result;
-    	echo ""
+        echo "  [!] Warning: $file";
+        echo "     "$result;
+        echo ""
     fi
 done
