@@ -1,0 +1,17 @@
+{
+    "name": "alekseykorzun/php-audit",
+    "type": "library",
+    "description": "phpAudit is a simple shell script that scans PHP files for possible security risks.",
+    "keywords": ["php", "audit", "security", "vuln", "scanner", "exploit", "hack", "check", "health"],
+    "homepage": "https://github.com/AlekseyKorzun/php-audit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aleksey Korzun",
+            "email": "al.ko@webfoundation.net",
+            "homepage": "http://www.alekseykorzun.com",
+            "role": "Developer"
+        }
+    ]
+}
+
